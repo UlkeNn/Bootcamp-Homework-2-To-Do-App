@@ -6,7 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		860816C82DB67FC5000ECAA7 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 860816C72DB67FC5000ECAA7 /* RxSwift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		8671732E2DB7F7A400451AB0 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		86CC28C62DB27A8800C3D29B /* TodoAppAssigment2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoAppAssigment2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -36,16 +41,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				860816C82DB67FC5000ECAA7 /* RxSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8671732D2DB7F7A400451AB0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8671732E2DB7F7A400451AB0 /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		86CC28BD2DB27A8800C3D29B = {
 			isa = PBXGroup;
 			children = (
 				86CC28C82DB27A8800C3D29B /* TodoAppAssigment2 */,
+				8671732D2DB7F7A400451AB0 /* Frameworks */,
 				86CC28C72DB27A8800C3D29B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -78,6 +93,7 @@
 			);
 			name = TodoAppAssigment2;
 			packageProductDependencies = (
+				860816C72DB67FC5000ECAA7 /* RxSwift */,
 			);
 			productName = TodoAppAssigment2;
 			productReference = 86CC28C62DB27A8800C3D29B /* TodoAppAssigment2.app */;
@@ -95,6 +111,7 @@
 				TargetAttributes = {
 					86CC28C52DB27A8800C3D29B = {
 						CreatedOnToolsVersion = 16.3;
+						LastSwiftMigration = 1630;
 					};
 				};
 			};
@@ -107,6 +124,9 @@
 			);
 			mainGroup = 86CC28BD2DB27A8800C3D29B;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				860816C62DB67FC5000ECAA7 /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 86CC28C72DB27A8800C3D29B /* Products */;
 			projectDirPath = "";
@@ -143,6 +163,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 67LYQ396QA;
@@ -161,6 +182,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sefacandemir.TodoAppAssigment2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "TodoAppAssigment2/TodoAppAssigment2-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -171,6 +194,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 67LYQ396QA;
@@ -189,6 +213,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sefacandemir.TodoAppAssigment2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "TodoAppAssigment2/TodoAppAssigment2-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -337,6 +362,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		860816C62DB67FC5000ECAA7 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.9.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		860816C72DB67FC5000ECAA7 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 860816C62DB67FC5000ECAA7 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 86CC28BE2DB27A8800C3D29B /* Project object */;
 }

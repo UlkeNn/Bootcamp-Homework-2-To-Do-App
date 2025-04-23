@@ -10,6 +10,7 @@ import UIKit
 class DetaySayfa: UIViewController {
     
     @IBOutlet weak var tfTask: UITextField!
+    var detaySayfaViewModel = DetaySayfaViewModel()
     
     var task: Tasks?
     
@@ -25,8 +26,9 @@ class DetaySayfa: UIViewController {
     
 
     @IBAction func buttonGuncelle(_ sender: Any) {
-        if let tn = tfTask.text,let t = task{
-            guncelle(task_id: t.task_id!, task_name: tn)
+        if let tn = tfTask.text,let tempTask = task{
+            detaySayfaViewModel.guncelle(task_id: tempTask.task_id!, task_name: tn)
+
         }
 
         

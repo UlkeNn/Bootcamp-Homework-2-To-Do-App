@@ -9,6 +9,7 @@ import UIKit
 
 class KayitSayfa: UIViewController {
     
+    var kayitSayfaViewModel = KayitSayfaViewModel()
     
     @IBOutlet weak var taskTextfield: UITextField!
     
@@ -24,7 +25,7 @@ class KayitSayfa: UIViewController {
     
     @IBAction func buttonKaydet(_ sender: Any) {
         if let tn = taskTextfield.text{
-            kaydet(task_name: tn)
+            kayitSayfaViewModel.kaydet(task_name: tn)
         }
            
         
@@ -32,9 +33,7 @@ class KayitSayfa: UIViewController {
     
     
     
-    func kaydet(task_name: String){
-        print("görev kaydet: \(task_name)")
-    }
+    
     
     
     

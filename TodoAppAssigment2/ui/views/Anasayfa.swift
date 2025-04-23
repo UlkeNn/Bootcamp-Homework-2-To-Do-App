@@ -15,19 +15,26 @@ class Anasayfa: UIViewController{
     
     var taskList = [Tasks]()
     
+    var anasayfaViewModel = AnasayfaViewModel()//init metodu çalışacak bağlantı da kurulacak repo ile vm arasında
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self//Anasayfayı Delegate ile bağlama
         tasksTableView.delegate = self
         tasksTableView.dataSource = self
         
-        let t1 = Tasks(task_id: 1,task_name: "Yemek")
-        let t2 = Tasks(task_id: 2,task_name: "Ödev")
-        let t3 = Tasks(task_id: 3,task_name: "Temizlik")
-        taskList.append(t1)
-        taskList.append(t2)
-        taskList.append(t3)
+        _ = anasayfaViewModel.taskList.subscribe(onNext: { list in
+            self.taskList = list
+            self.tasksTableView.reloadData()
+            
+        })
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        //super.viewWillAppear(animated)//burası tam bilmiyorum!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        print("ViewWillAppear Çalıştı")
+        anasayfaViewModel.gorevleriYukle()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -44,7 +51,7 @@ class Anasayfa: UIViewController{
 extension Anasayfa: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print("Task ara: \(searchText)")
+        anasayfaViewModel.ara(aramaKelimesi: searchText)//->VM->Repo bağlandı
     }
 }
 
@@ -77,7 +84,7 @@ extension Anasayfa:  UITableViewDelegate,UITableViewDataSource{
             let iptalAction = UIAlertAction(title: "İptal", style: .cancel)
             alert.addAction(iptalAction)
             let evetAction = UIAlertAction(title: "evet", style: .destructive){action in
-                print("Kisi sil: \(t.task_name!)")
+                self.anasayfaViewModel.sil(id: t.task_id!)
                 
                 
             }
